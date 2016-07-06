@@ -24,7 +24,7 @@ public class Restaurant {
         this.mPhone = phone;
         this.mWebsite = website;
         this.mRating = rating;
-        this.mImageUrl = imageUrl;
+        this.mImageUrl = getLargeImageUrl(imageUrl);
         this.mLatitude = latitude;
         this.mLongitude = longitude;
         this.mCategories = categories;
@@ -48,6 +48,11 @@ public class Restaurant {
 
     public String getImageUrl(){
         return mImageUrl;
+    }
+
+    public String getLargeImageUrl(String imageUrl) {
+        String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
+        return largeImageUrl;
     }
 
     public ArrayList<String> getAddress() {
