@@ -28,8 +28,8 @@ import okhttp3.Response;
 public class RestaurantListActivity extends AppCompatActivity {
     public static final String TAG = RestaurantListActivity.class.getSimpleName();
 
-    private SharedPreferences mSharedPreferences;
-    private String mRecentAddress;
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentAddress;
 
     @Bind(R.id.locationTextView) TextView mLocationTextView;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -48,11 +48,11 @@ public class RestaurantListActivity extends AppCompatActivity {
         mLocationTextView.setText("Here are all the restaurants near " + location);
         getRestaurants(location);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-        if (mRecentAddress != null) {
-            getRestaurants(mRecentAddress);
-        }
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+//        if (mRecentAddress != null) {
+//            getRestaurants(mRecentAddress);
+//        }
     }
 
     private void getRestaurants(String location) {
